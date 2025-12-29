@@ -1,0 +1,9 @@
+streamlit
+pandas
+openpyxl
+pymupdf
+requests
+beautifulsoup4
+plotly
+bcrypt
+watchdog

@@ -1,0 +1,7 @@
+[theme]
+# Spotify Dark Mode Theme
+primaryColor = "#1DB954"          # Spotify Green
+backgroundColor = "#121212"        # Spotify Background
+secondaryBackgroundColor = "#181818"  # Spotify Cards
+textColor = "#FFFFFF"              # White text
+font = "sans serif"

@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #f8f8f8;
+    --bg-sidebar: #ffffff;
+    --bg-card: #ececec;
+    --text-main: #121212;
+    --text-muted: #535353;
+  }
+
+  .dark {
+    --bg-main: #121212;
+    --bg-sidebar: #000000;
+    --bg-card: #181818;
+    --text-main: #ffffff;
+    --text-muted: #b3b3b3;
+  }
+
+  body {
+    @apply antialiased bg-[var(--bg-main)] text-[var(--text-main)];
+  }
+}
+
+/* Custom Scrollbar estilo Spotify */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Transiciones globales */
+.transition-all {
+  transition-duration: 300ms;
+}

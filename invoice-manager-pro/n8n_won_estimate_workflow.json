@@ -1,0 +1,49 @@
+{
+    "name": "REDMIL - Send Thank You Email on Won Estimate",
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "estimate-won",
+                "options": {}
+            },
+            "name": "Webhook",
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                250,
+                300
+            ],
+            "webhookId": "def456-ghi789"
+        },
+        {
+            "parameters": {
+                "fromEmail": "ventas@redmil.hn",
+                "toEmail": "={{$json[\"customer_email\"]}}",
+                "subject": "¡Gracias por su compra! - REDMIL Honduras",
+                "text": "Estimado/a {{$json[\"customer_name\"]}},\n\nEs un gusto saludarle. Le escribimos para agradecerle por confiar en REDMIL Honduras. Su cotización {{$json[\"estimate_number\"]}} por un monto de Lps. {{$json[\"total\"]}} ha sido procesada con éxito.\n\nPronto nos pondremos en contacto para coordinar la entrega.\n\nSaludos,\nEquipo REDMIL",
+                "options": {}
+            },
+            "name": "Send Email",
+            "type": "n8n-nodes-base.emailSend",
+            "typeVersion": 1,
+            "position": [
+                500,
+                300
+            ]
+        }
+    ],
+    "connections": {
+        "Webhook": {
+            "main": [
+                [
+                    {
+                        "node": "Send Email",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}
